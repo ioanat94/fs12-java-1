@@ -1,8 +1,11 @@
+import model.Cart;
 import model.Product;
 import model.ProductList;
 
 public class Main {
     public static void main(String[] args) {
+
+        // PRODUCT OPERATIONS
 
         // "POST"
         Product product1 = new Product("Cat Toy 1", "https://some-url.com/1", "Cool toy 1", new String[]{"cats", "toys"}, new String[]{"mouse"}, new String[]{"small"}, 9.99, 10);
@@ -31,5 +34,26 @@ public class Main {
         // "DELETE"
         products.deleteProduct(product5);
         System.out.println(products.getAllProducts());
+
+        // CART OPERATIONS
+
+        Cart cart = new Cart();
+        cart.addToCart(product1);
+        cart.addToCart(product2);
+        cart.addToCart(product3);
+        cart.addToCart(product4);
+        cart.addToCart(product5);
+        System.out.println(cart);
+
+        cart.removeFromCart(product5);
+        System.out.println(cart);
+
+        cart.setShippingAddress("Test str, no. 123, 12345 Honolulu");
+        cart.setPaymentMethod("credit card");
+        cart.pay(33.96);
+        System.out.println(cart);
+
+        cart.emptyCart();
+        System.out.println(cart);
     }
 }
