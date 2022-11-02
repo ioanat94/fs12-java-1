@@ -65,4 +65,20 @@ public class Cart {
                 ", isPaid=" + isPaid +
                 '}';
     }
+
+    public ArrayList<Product> getCartItems() {
+        return cartItems;
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public String getShippingAddress() {
+        return shippingAddress;
+    }
+
+    public boolean isPaid() {
+        return isPaid;
+    }
 }

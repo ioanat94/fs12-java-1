@@ -1,6 +1,4 @@
-import model.Cart;
-import model.Product;
-import model.ProductList;
+import model.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -53,7 +51,23 @@ public class Main {
         cart.pay(33.96);
         System.out.println(cart);
 
-        cart.emptyCart();
-        System.out.println(cart);
+        // cart.emptyCart();
+        // System.out.println(cart);
+
+        // USER & ORDER OPERATIONS
+
+        User user = new User("Ioana", "Tiplea", "ioana.tiplea@integrify.io", "https://cool-profile-pics.com/1");
+        System.out.println(user);
+
+        user.setFirstName("John");
+        user.setLastName("Doe");
+        user.setImage("https://cool-profile-pics.com/1");
+        System.out.println(user);
+
+        Order order = new Order(cart, user);
+        System.out.println(order);
+
+        order.advanceOrder();
+        System.out.println("Order status: " + order.getStatus());
     }
 }
